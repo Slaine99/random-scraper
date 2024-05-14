@@ -156,7 +156,7 @@ login_houz(driver, url)
 all_counties = json.loads(open('counties.json', 'r').read())
 #Start at specific county
 all_counties = all_counties[::-1]
-all_counties = all_counties[all_counties.index({"county": "Nantucket County, Massachusetts", "postcode": "02554"}):]
+all_counties = all_counties[all_counties.index({"county": "Fairfax city, Virginia", "postcode": "22030"}):]
 
 for county in all_counties:
     driver.get("https://www.houzz.com/professionals/interior-designer")
