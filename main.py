@@ -219,7 +219,8 @@ for county in all_counties:
             print("Saved")
             print(parsed_data)
             list_of_data.append(parsed_data)
-
+            print("Data extracted for State", county['county'])
+            print("Progress rate: ", len(list_of_data)/len(urls))
 
 
         except Exception as e:
