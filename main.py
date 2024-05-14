@@ -76,7 +76,7 @@ def parse_data(business_data, url):
 def login_houz(driver, url):
     driver.get(url)
     time.sleep(5)
-    username_str = "phillipandrew.espina@g.msuiit.edu.ph"
+    username_str = "shumnmitsuebaby143@gmail.com"
     password_str = "Firiyuu77!"
     user_name = driver.find_element(By.XPATH, '//input[contains(concat(" ",normalize-space(@class)," ")," authFlowInput ")][contains(concat(" ",normalize-space(@class)," ")," form-control ")]')
     user_name.send_keys(username_str)
@@ -154,7 +154,7 @@ login_houz(driver, url)
 all_counties = json.loads(open('counties.json', 'r').read())
 #Start at specific county
 all_counties = all_counties[::-1]
-all_counties = all_counties[all_counties.index({"county": "Marin County, California", "postcode": "94901"}):]
+all_counties = all_counties[all_counties.index({"county": "Nantucket County, Massachusetts", "postcode": "02554"}):]
 
 for county in all_counties:
     driver.get("https://www.houzz.com/professionals/interior-designer")
