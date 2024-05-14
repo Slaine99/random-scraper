@@ -77,7 +77,7 @@ def parse_data(business_data, url):
 def login_houz(driver, url):
     driver.get(url)
     time.sleep(5)
-    username_str = "shumnmitsuebaby143@gmail.com"
+    username_str = "shummitsuebaby143@gmail.com"
     password_str = "Firiyuu77!"
     user_name = driver.find_element(By.XPATH, '//input[contains(concat(" ",normalize-space(@class)," ")," authFlowInput ")][contains(concat(" ",normalize-space(@class)," ")," form-control ")]')
     user_name.send_keys(username_str)
