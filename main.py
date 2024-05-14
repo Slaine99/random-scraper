@@ -213,7 +213,9 @@ for county in all_counties:
             parsed_data["Zip Code"] = address_components.get("ZipCode", "")
             #Get current driver url
             parsed_data["URL"] = driver.current_url
-            save_to_mongodb(parsed_data)
+            #save_to_mongodb(parsed_data)
+            print("Saved")
+            print(parsed_data)
             list_of_data.append(parsed_data)
 
 
