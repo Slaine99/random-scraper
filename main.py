@@ -28,6 +28,7 @@ def save_to_mongodb(data):
 def get_all_popular_states(driver):
     driver.get("https://www.houzz.com/professionals/interior-designer")
     time.sleep(2)
+    
     click_state = driver.find_element(By.XPATH, '//input[contains(concat(" ",normalize-space(@class)," ")," pro-location-autosuggest__input ")]').click()
     time.sleep(1)
     states = driver.find_elements(By.XPATH, '//li[@role="option"][@data-section-index="2"]//a[contains(concat(" ",normalize-space(@class)," ")," sc-1qppj2g-0 ")]')
@@ -146,6 +147,7 @@ def search_houz(driver):
 
 
 driver = webdriver.Chrome()  # or webdriver.Firefox(), webdriver.Edge(), etc.
+driver.maximize_window()
 url = "https://www.houzz.com/houzz-login"
 login_houz(driver, url)
 
@@ -160,8 +162,8 @@ for county in all_counties:
     driver.get("https://www.houzz.com/professionals/interior-designer")
     time.sleep(2)
     #wait for element to load
-    WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.XPATH, '//input[contains(concat(" ",normalize-space(@class)," ")," pro-location-autosuggest__input ")]')))
-
+    WebDriverWait(driver, 100).until(EC.presence_of_element_located((By.XPATH, '//input[contains(concat(" ",normalize-space(@class)," ")," pro-location-autosuggest__input ")]')))
+    WebDriverWait(driver, 100).until(EC.element_to_be_clickable((By.XPATH, '//input[contains(concat(" ",normalize-space(@class)," ")," pro-location-autosuggest__input ")]')))
     driver.find_element(By.XPATH, '//input[contains(concat(" ",normalize-space(@class)," ")," pro-location-autosuggest__input ")]').click()
     driver.find_element(By.XPATH, '//input[contains(concat(" ",normalize-space(@class)," ")," pro-location-autosuggest__input ")]').send_keys(county["postcode"])
     #press enter
