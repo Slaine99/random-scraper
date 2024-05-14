@@ -153,7 +153,8 @@ login_houz(driver, url)
 # Get professional URLs===============================================
 all_counties = json.loads(open('counties.json', 'r').read())
 #Start at specific county
-all_counties = all_counties[all_counties.index({"county": "Williamson County, Tennessee", "postcode": "37064"}):]
+all_counties = all_counties[::-1]
+all_counties = all_counties[all_counties.index({"county": "Marin County, California", "postcode": "94901"}):]
 
 for county in all_counties:
     driver.get("https://www.houzz.com/professionals/interior-designer")
